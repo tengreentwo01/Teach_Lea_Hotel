@@ -1,0 +1,38 @@
+<?php include("./model/DB.php"); ?>
+
+<section id="testimonials" class="testimonials section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>กิจกรรม</h2>
+            <p>ข่าวสารประชาสัมพันธ์</p>
+        </div>
+
+        <?php
+        try {
+            $obj = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $obj->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "SELECT * FROM tbl_events";
+            $result = $obj->query($sql);
+
+            if ($result) {
+                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                    echo '<div class="carousel-item active" style="background-image: url(' . $row['eventspicH'] . ')">';
+                    echo '    <div class="carousel-container">';
+                    echo '        <div class="container">';
+                    echo '            <h2 class="animate__animated animate__fadeInDown">ยินดีต้อนรับ <span>วัดสวรรคาราม</span></h2>';
+                    echo '            <p class="animate__animated animate__fadeInUp">แหล่งรวมจิตรใจ ในศรัทธา</p>';
+                    echo '            <a href="' . $row['eventsid'] . $row['eventspicH'] . '" class="btn-get-started animate__animated animate__fadeInUp scrollto">อ่านต่อ...</a>';
+                    echo '        </div>';
+                    echo '    </div>';
+                    echo '</div><!-- End testimonial item -->';
+                }
+            } else {
+                echo "No results found";
+            }
+        } catch (PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+        }
+        ?>
+    </div>
+</section>
