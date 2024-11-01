@@ -20,13 +20,13 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
-                                    <form action="../../control/login.php" method="POST">
+                                <form action="../../control/login.php" method="POST"  onsubmit="return confirmSubmission();">
                                         <div class="form-floating mb-3">
                                             <input class="form-control" id="inputEmail" name="username" type="text" placeholder="username" required />
                                             <label for="inputEmail">Username</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Password" required />
+                                            <input class="form-control" id="inputPassword" name="passing" type="password" placeholder="Password" required />
                                             <label for="inputPassword">Password</label>
                                         </div>
                                         <div class="form-check mb-3">
@@ -37,7 +37,7 @@
                                             <a class="small" href="password.html">Forgot Password?</a>
                                             <button type="submit" class="btn btn-primary">Login</button>
                                         </div>
-                                    </form>
+                                </form>
 
                                     </div>
                                     <div class="card-footer text-center py-3">
@@ -66,5 +66,18 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../../public/js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function confirmSubmission() {
+        // รับค่าจากฟอร์ม
+        const input_username = document.querySelector('input[name="username"]').value;
+        const input_password = document.querySelector('input[name="passing"]').value;
+    
+        // แสดง alert
+        alert(`ข้อมูลที่ส่ง:\nUsername: ${input_username}\nPassword: ${input_password}`);
+
+        return true; // คืนค่า true เพื่อส่งฟอร์ม
+    }
+</script>
     </body>
 </html>

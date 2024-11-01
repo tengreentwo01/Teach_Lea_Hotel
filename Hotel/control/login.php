@@ -3,7 +3,6 @@ session_start();
 include '../model/DB.php';
 
 // Assuming you have already established a database connection $conn
-
 // Checking if session variables are set and redirecting accordingly
 if (!empty($_SESSION['username']) && !empty($_SESSION['passing'])) {
     header("Location: ../backend/index.php");
@@ -33,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Authentication successful
         $_SESSION['username'] = $resultUsername;
         $_SESSION['status'] = 1;
-        header("Location: ../backend/admin2.php");
+        header("Location: ../backend/index.php");
         exit();
     } else {
         // Authentication failed
@@ -51,7 +50,7 @@ $error_message = "
                   ";
 
 echo $error_message; // Display the error message
-header("refresh:5; url=../backend/admin.php"); // Redirect after 5 seconds
+header("refresh:5; url=../backend/index.php"); // Redirect after 5 seconds
 
 $conn->close();
 ?>

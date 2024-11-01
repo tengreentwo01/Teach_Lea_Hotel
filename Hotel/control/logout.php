@@ -6,7 +6,7 @@ session_start();
 session_destroy();
 
 // เปลี่ยนเส้นทางไปยังหน้า admin.php
-header("Location: ../backend/admin.php");
+header("Location: ../frontend/auth/login.php");
 
 // หยุดการทำงานของสคริปต์
 exit();
