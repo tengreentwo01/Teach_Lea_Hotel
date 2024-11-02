@@ -40,7 +40,7 @@ if ($stmt->execute()) {
     // Registration successful
     echo "<script>
         alert('สมัครสมาชิกสำเร็จ!');
-        window.location.href = './logout.php';
+        window.location.href = '../backend/member.php';
     </script>";
     exit();
 } else {
