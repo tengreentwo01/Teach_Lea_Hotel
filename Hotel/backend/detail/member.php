@@ -73,7 +73,7 @@ $conn->close();
                                 echo "<tr>";
                                 echo "<td>" . htmlspecialchars($row['name']) . "</td>";
                                 echo "<td>" . htmlspecialchars($row['username']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['room_id']) . "</td>";
+                                echo "<td></td>";
                                 echo "<td></td>";
                                 echo "<td></td>";
                                 echo "<td>
